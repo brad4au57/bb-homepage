@@ -78,7 +78,7 @@
         font-size: 1rem;
         text-decoration: none;
         font-style: italic;
-        color: var(--bg-soft-black);
+        color: var(--text-main);
 
         /* Slight sharpening */
         text-rendering: optimizeLegibility;
@@ -99,11 +99,12 @@
       .nav-links a {
         text-decoration: none;
         color: var(--text-muted);
+        transition: color 0.15s ease-in-out;
       }
 
       .nav-links a:hover,
       .nav-links a:focus-visible {
-        color: var(--text-main);
+        color: var(--accent-teal);
       }
 
       main {
@@ -381,7 +382,6 @@
     <footer>
       <div class="container footer-inner">
         <span> © <span id="copyright-year"></span> Brad Bales </span>
-        <span>Built with Pico CSS</span>
       </div>
     </footer>
 
