@@ -73,22 +73,20 @@
       }
 
       .brand {
-        font-weight: 600;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        font-size: 0.95rem;
-        color: var(--text-main);
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        font-size: 1rem;
         text-decoration: none;
+        font-style: italic;
+        color: var(--bg-soft-black);
+
+        /* Slight sharpening */
+        text-rendering: optimizeLegibility;
       }
 
-      .brand span.highlight {
-        background: linear-gradient(
-          135deg,
-          rgba(20, 184, 166, 0.4),
-          rgba(14, 165, 233, 0.6)
-        );
-        padding: 0.15rem 0.45rem;
-        border-radius: 999px;
+      .brand:hover,
+      .brand:focus-visible {
+        opacity: 0.85;
       }
 
       .nav-links {
@@ -125,7 +123,7 @@
       }
 
       .hero-tagline {
-        font-size: 0.9rem;
+        font-size: 1.5rem;
         text-transform: uppercase;
         letter-spacing: 0.18em;
         color: var(--accent-teal);
@@ -134,7 +132,7 @@
 
       .hero-title {
         font-size: clamp(2.2rem, 3vw + 1.5rem, 3rem);
-        margin-bottom: 0.4rem;
+        margin-bottom: 0.25rem;
       }
 
       .hero-subtitle {
@@ -155,6 +153,25 @@
         margin: 0;
       }
 
+      /* Force primary button to stay in the teal range */
+      button.primary,
+      a.primary[role='button'] {
+        background-color: var(--accent-teal) !important;
+        border-color: var(--accent-teal) !important;
+        color: var(--text-main);
+      }
+
+      button.primary:hover,
+      a.primary[role='button']:hover {
+        background-color: #0d9488 !important; /* darker teal */
+        border-color: #0d9488 !important;
+      }
+
+      button.primary:focus-visible,
+      a.primary[role='button']:focus-visible {
+        outline-color: var(--accent-teal) !important;
+      }
+
       .secondary-button {
         border: 1px solid rgba(148, 163, 184, 0.5);
         background: transparent;
@@ -163,8 +180,8 @@
 
       .secondary-button:hover,
       .secondary-button:focus-visible {
-        border-color: var(--accent-blue);
-        color: var(--accent-blue);
+        border-color: var(--accent-teal);
+        color: var(--accent-teal);
       }
 
       .contact-block {
@@ -284,9 +301,7 @@
     <!-- Header / Navigation -->
     <header>
       <nav class="container site-nav" aria-label="Primary">
-        <a class="brand" href="#top">
-          <span class="highlight">Brad&nbsp;Bales</span>
-        </a>
+        <a class="brand" href="#top"> BB.com </a>
 
         <div class="nav-links">
           <!-- Future-proofed nav: these can point to real sections later -->
@@ -301,7 +316,7 @@
     <main id="top">
       <section class="container hero">
         <div class="hero-inner">
-          <p class="hero-tagline">Hi, I'm Brad</p>
+          <h2 class="hero-tagline">Hi, I'm Brad</h2>
 
           <h1 class="hero-title">
             QA Automation Engineer &amp; JavaScript Developer
@@ -318,7 +333,7 @@
             <a
               role="button"
               class="primary"
-              href="https://github.com/bradbales"
+              href="https://github.com/brad4au57"
               target="_blank"
               rel="noreferrer"
             >
@@ -328,7 +343,7 @@
             <a
               role="button"
               class="secondary-button"
-              href="mailto:brad@bradbales.com"
+              href="mailto:brad4au57+bbhomepage@gmail.com"
             >
               Email Me
             </a>
@@ -342,18 +357,11 @@
             </p>
             <div class="contact-inline">
               <span>
-                Email:
-                <a href="mailto:brad@bradbales.com">brad@bradbales.com</a>
-              </span>
-              <span>
-                GitHub:
-                <a
-                  href="https://github.com/bradbales"
-                  target="_blank"
-                  rel="noreferrer"
+                You can
+                <a href="mailto:brad4au57+bbhomepage@gmail.com"
+                  >send me an email</a
                 >
-                  @bradbales
-                </a>
+                and I'll get back to you.
               </span>
               <!-- Uncomment / update if you want LinkedIn later
               <span>
@@ -372,9 +380,18 @@
     <!-- Footer -->
     <footer>
       <div class="container footer-inner">
-        <span>© 2025 Brad Bales</span>
+        <span> © <span id="copyright-year"></span> Brad Bales </span>
         <span>Built with Pico CSS</span>
       </div>
     </footer>
+
+    <script>
+      (function () {
+        const yearSpan = document.getElementById('copyright-year');
+        if (yearSpan) {
+          yearSpan.textContent = new Date().getFullYear();
+        }
+      })();
+    </script>
   </body>
 </html>
