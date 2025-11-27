@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <title>Brad Bales · QA Automation & JavaScript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Brad Bales · QA Automation Engineer & JavaScript Developer"
+    />
+
+    <!-- Pico CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
+    />
+
+    <link rel="stylesheet" href="styles/home.css" />
+  </head>
+
+  <body>
+    <!-- Header / Navigation -->
+    <header>
+      <nav class="container site-nav" aria-label="Primary">
+        <a class="brand" href="#top">
+          <img
+            src="assets/bb-logo-mixed-transparent.png"
+            alt="Brad Bales logo"
+            class="brand-logo"
+          />
+        </a>
+
+        <div class="nav-links">
+          <!-- Future-proofed nav: these can point to real sections later -->
+          <a href="#about" aria-disabled="true">About</a>
+          <a href="#projects" aria-disabled="true">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero / Main content -->
+    <main id="top">
+      <section class="container hero">
+        <div class="hero-inner">
+          <h2 class="hero-tagline">Hi, I'm Brad</h2>
+
+          <h1 class="hero-title">
+            QA Automation Engineer &amp; JavaScript Developer
+          </h1>
+
+          <p class="hero-subtitle">
+            I build test automation, tooling, and web experiences that keep
+            releases reliable, repeatable, and a little less stressful for
+            everyone involved.
+          </p>
+
+          <div class="hero-actions">
+            <!-- Update hrefs to your actual profiles -->
+            <a
+              role="button"
+              class="primary"
+              href="mailto:brad4au57+bbhomepage@gmail.com"
+            >
+              Email Me
+            </a>
+
+            <a
+              role="button"
+              class="secondary-button"
+              href="https://github.com/brad4au57"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View GitHub
+            </a>
+          </div>
+
+          <!-- Contact anchor (still visually part of the hero) -->
+          <section id="contact" class="contact-block">
+            <p class="contact-heading">Contact</p>
+            <p class="contact-text">
+              Want to talk test automation, JavaScript, or a project idea?
+            </p>
+            <div class="contact-inline">
+              <span>
+                You can
+                <a href="mailto:brad4au57+bbhomepage@gmail.com"
+                  >send me an email</a
+                >
+                and I'll get back to you.
+              </span>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container footer-inner">
+        <span> © <span id="copyright-year"></span> Brad Bales </span>
+      </div>
+    </footer>
+
+    <script src="js/index.js" defer></script>
+  </body>
+</html>

@@ -1,397 +1,49 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Brad Bales · QA Automation & JavaScript</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Brad Bales · QA Automation Engineer & JavaScript Developer"
-    />
-
-    <!-- Pico CSS -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
-    />
-
+    <meta http-equiv="refresh" content="0; url=/home" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Redirecting…</title>
+    <link rel="canonical" href="/home" />
+    <meta name="robots" content="noindex" />
     <style>
-      /* === Theming / Color Palette ============================= */
-
-      :root[data-theme='dark'] {
-        /* Base colors */
-        --bg-soft-black: #020617;
-        --text-main: #e5e7eb;
-        --text-muted: #9ca3af;
-
-        /* Accents */
-        --accent-teal: #14b8a6;
-        --accent-blue: #0ea5e9;
-
-        /* Pico overrides */
-        --pico-background-color: var(--bg-soft-black);
-        --pico-color: var(--text-main);
-        --pico-muted-color: var(--text-muted);
-
-        --pico-primary: var(--accent-teal);
-        --pico-primary-hover: #0d9488;
-        --pico-primary-focus: #115e59;
-
-        --pico-border-color: rgba(148, 163, 184, 0.4);
-      }
-
+      /* Minimal styling so the page looks tidy while redirecting */
+      html,
       body {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        background: radial-gradient(
-            circle at top left,
-            var(--accent-blue) 0,
-            transparent 55%
-          ),
-          radial-gradient(
-            circle at bottom right,
-            var(--accent-teal) 0,
-            transparent 55%
-          ),
-          var(--bg-soft-black);
-        color: var(--text-main);
-      }
-
-      /* === Layout =============================================== */
-
-      header {
-        padding-top: 1.25rem;
-        padding-bottom: 0.75rem;
-      }
-
-      .site-nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1.5rem;
-      }
-
-      .brand {
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        font-size: 1rem;
-        text-decoration: none;
-        font-style: italic;
-        color: var(--text-main);
-
-        /* Slight sharpening */
-        text-rendering: optimizeLegibility;
-      }
-
-      .brand:hover,
-      .brand:focus-visible {
-        opacity: 0.85;
-      }
-
-      .nav-links {
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
-        font-size: 0.9rem;
-      }
-
-      .nav-links a {
-        text-decoration: none;
-        color: var(--text-muted);
-        transition: color 0.15s ease-in-out;
-      }
-
-      .nav-links a:hover,
-      .nav-links a:focus-visible {
-        color: var(--accent-teal);
-      }
-
-      main {
-        flex: 1;
-        display: flex;
-        align-items: center;
-      }
-
-      .hero {
-        padding-top: 1rem;
-        padding-bottom: 2.5rem;
-      }
-
-      .hero-inner {
-        max-width: 720px;
-        margin: 0 auto;
-      }
-
-      .hero-tagline {
-        font-size: 1.5rem;
-        text-transform: uppercase;
-        letter-spacing: 0.18em;
-        color: var(--accent-teal);
-        margin-bottom: 0.5rem;
-      }
-
-      .hero-title {
-        font-size: clamp(2.2rem, 3vw + 1.5rem, 3rem);
-        margin-bottom: 0.25rem;
-      }
-
-      .hero-subtitle {
-        font-size: 1.1rem;
-        color: var(--text-muted);
-        margin-bottom: 1.75rem;
-        max-width: 32rem;
-      }
-
-      .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.9rem;
-        margin-bottom: 2.25rem;
-      }
-
-      .hero-actions a[role='button'] {
+        height: 100%;
         margin: 0;
-      }
-
-      /* Force primary button to stay in the teal range */
-      button.primary,
-      a.primary[role='button'] {
-        background-color: var(--accent-teal) !important;
-        border-color: var(--accent-teal) !important;
-        color: var(--text-main);
-      }
-
-      button.primary:hover,
-      a.primary[role='button']:hover {
-        background-color: #0d9488 !important; /* darker teal */
-        border-color: #0d9488 !important;
-      }
-
-      button.primary:focus-visible,
-      a.primary[role='button']:focus-visible {
-        outline-color: var(--accent-teal) !important;
-      }
-
-      .secondary-button {
-        border: 1px solid rgba(148, 163, 184, 0.5);
-        background: transparent;
-        color: var(--text-main);
-      }
-
-      .secondary-button:hover,
-      .secondary-button:focus-visible {
-        border-color: var(--accent-teal);
-        color: var(--accent-teal);
-      }
-
-      .contact-block {
-        border-radius: 1rem;
-        border: 1px solid rgba(148, 163, 184, 0.35);
-        padding: 1.15rem 1.3rem;
-        backdrop-filter: blur(12px);
-        background: radial-gradient(
-            circle at top left,
-            rgba(15, 23, 42, 0.85),
-            rgba(15, 23, 42, 0.9)
-          )
-          border-box;
-      }
-
-      .contact-heading {
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        letter-spacing: 0.16em;
-        color: var(--text-muted);
-        margin-bottom: 0.35rem;
-      }
-
-      .contact-text {
-        margin-bottom: 0.15rem;
-        color: var(--text-main);
-      }
-
-      .contact-inline {
+        font-family: system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        background: #020617;
+        color: #e5e7eb;
         display: flex;
-        flex-wrap: wrap;
-        gap: 1.2rem;
         align-items: center;
-        font-size: 0.95rem;
+        justify-content: center;
       }
-
-      .contact-inline a {
-        color: var(--accent-teal);
-        text-decoration: none;
+      .notice {
+        max-width: 36rem;
+        padding: 1.25rem;
+        text-align: center;
       }
-
-      .contact-inline a:hover,
-      .contact-inline a:focus-visible {
-        color: var(--accent-blue);
-        text-decoration: underline;
-      }
-
-      footer {
-        padding-top: 0.5rem;
-        padding-bottom: 1.25rem;
-        font-size: 0.85rem;
-        color: var(--text-muted);
-      }
-
-      footer .footer-inner {
-        display: flex;
-        justify-content: space-between;
-        gap: 1rem;
-        flex-wrap: wrap;
-      }
-
-      footer a {
-        color: var(--text-muted);
-        text-decoration: none;
-      }
-
-      footer a:hover,
-      footer a:focus-visible {
-        color: var(--accent-teal);
-        text-decoration: underline;
-      }
-
-      /* === Responsive tweaks ==================================== */
-
-      @media (max-width: 768px) {
-        .site-nav {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        .nav-links {
-          padding-left: 0.1rem;
-        }
-
-        .hero-inner {
-          text-align: left;
-        }
-
-        .hero-title {
-          font-size: clamp(2rem, 6vw, 2.4rem);
-        }
-
-        .hero-actions {
-          flex-direction: row;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .hero-actions {
-          flex-direction: column;
-          align-items: stretch;
-        }
-
-        .hero-subtitle {
-          font-size: 1rem;
-        }
-
-        .contact-inline {
-          flex-direction: column;
-          align-items: flex-start;
-        }
+      a {
+        color: #14b8a6;
       }
     </style>
-  </head>
-
-  <body>
-    <!-- Header / Navigation -->
-    <header>
-      <nav class="container site-nav" aria-label="Primary">
-        <a class="brand" href="#top"> BB.com </a>
-
-        <div class="nav-links">
-          <!-- Future-proofed nav: these can point to real sections later -->
-          <a href="#about" aria-disabled="true">About</a>
-          <a href="#projects" aria-disabled="true">Projects</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </nav>
-    </header>
-
-    <!-- Hero / Main content -->
-    <main id="top">
-      <section class="container hero">
-        <div class="hero-inner">
-          <h2 class="hero-tagline">Hi, I'm Brad</h2>
-
-          <h1 class="hero-title">
-            QA Automation Engineer &amp; JavaScript Developer
-          </h1>
-
-          <p class="hero-subtitle">
-            I build test automation, tooling, and web experiences that keep
-            releases reliable, repeatable, and a little less stressful for
-            everyone involved.
-          </p>
-
-          <div class="hero-actions">
-            <!-- Update hrefs to your actual profiles -->
-            <a
-              role="button"
-              class="primary"
-              href="https://github.com/brad4au57"
-              target="_blank"
-              rel="noreferrer"
-            >
-              View GitHub
-            </a>
-
-            <a
-              role="button"
-              class="secondary-button"
-              href="mailto:brad4au57+bbhomepage@gmail.com"
-            >
-              Email Me
-            </a>
-          </div>
-
-          <!-- Contact anchor (still visually part of the hero) -->
-          <section id="contact" class="contact-block">
-            <p class="contact-heading">Contact</p>
-            <p class="contact-text">
-              Want to talk test automation, JavaScript, or a project idea?
-            </p>
-            <div class="contact-inline">
-              <span>
-                You can
-                <a href="mailto:brad4au57+bbhomepage@gmail.com"
-                  >send me an email</a
-                >
-                and I'll get back to you.
-              </span>
-              <!-- Uncomment / update if you want LinkedIn later
-              <span>
-                LinkedIn:
-                <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noreferrer">
-                  your-profile
-                </a>
-              </span>
-              -->
-            </div>
-          </section>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-      <div class="container footer-inner">
-        <span> © <span id="copyright-year"></span> Brad Bales </span>
-      </div>
-    </footer>
-
     <script>
-      (function () {
-        const yearSpan = document.getElementById('copyright-year');
-        if (yearSpan) {
-          yearSpan.textContent = new Date().getFullYear();
-        }
-      })();
+      // Use replace so the redirect doesn't create an extra history entry
+      try {
+        window.location.replace('/home');
+      } catch (e) {
+        // fail silently
+      }
     </script>
+  </head>
+  <body>
+    <main class="notice">
+      <h1>Redirecting to /home</h1>
+      <p>
+        If you are not redirected automatically, <a href="/home">click here</a>.
+      </p>
+    </main>
   </body>
 </html>
